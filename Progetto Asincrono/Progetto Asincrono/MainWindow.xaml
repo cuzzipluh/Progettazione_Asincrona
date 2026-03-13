@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="ESTRAI LETTERA" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="58" Width="234"/>
-        <Label Name="lblAlfabeto" Content="Label" HorizontalAlignment="Left" Margin="84,308,0,0" VerticalAlignment="Top" FontSize="20" Height="93" Width="159"/>
-        <Label Name="lblfrase" Content="Label" HorizontalAlignment="Left" Margin="612,315,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="2.088,0.796"/>
+        <Button Content="ESTRAI LETTERA" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="58" Width="234" Background="#FFE63939"/>
+        <Label Name="lblAlfabeto" Content="Label" HorizontalAlignment="Left" Margin="84,308,0,0" VerticalAlignment="Top" FontSize="20" Height="93" Width="159" Background="White" Foreground="#FF0E0580"/>
+        <Label Name="lblfrase" Content="Label" HorizontalAlignment="Left" Margin="612,315,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="2.088,0.796" Background="#00000000" Foreground="#FF0E0580"/>
         <ListBox Name="lstParole" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="186,10,186,259" FontSize="16"/>
-        <TextBox Name="Txblunghezza" HorizontalAlignment="Left" Margin="580,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="529,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="it-it" Text="inserisci la lunghezza massima della parola"/></TextBlock>
+        <TextBox Name="Txblunghezza" HorizontalAlignment="Left" Margin="580,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="529,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="it-it" Text="inserisci la lunghezza massima della parola"/></TextBlock>
     </Grid>
 </Window>
