@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -17,28 +18,18 @@ namespace Progetto_Asincrono
     /// </summary>
     public partial class MainWindow : Window
     {
+        string lettere_alfabeto;
+        string _frase;
+        string LunghezzaParola;
         public MainWindow()
         {
             InitializeComponent();
-        }
-        
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
             generaNumeri();
-
-
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private async Task generaNumeri()
         {
              string[] alfa = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-            string lettere_alfabeto;
             {
                 int Tmp = 0;
                 while (true)
@@ -46,7 +37,7 @@ namespace Progetto_Asincrono
                     Tmp++;
                     if (Tmp >= 25)
                     {
-                        Tmp = 26;
+                        Tmp = 0;
                     }
                     await Task.Delay(100);
                     lettere_alfabeto = alfa[Tmp];
@@ -57,7 +48,31 @@ namespace Progetto_Asincrono
             }
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LunghezzaParola = Txblunghezza.Text;
+            _frase += lettere_alfabeto;
+            lblfrase.Content = _frase;
 
+            if (int.TryParse(Txblunghezza.Text, out int lunghezzaTarget))
+            {
+                if (_frase.Length >= lunghezzaTarget)
+                {
+                    AggiungiAllaLista(_frase);
 
+                }
+                
+            }
+        }
+
+        private void AggiungiAllaLista(string parola)
+        {
+            lstParole.Items.Add(parola);
+
+            _frase = "";
+            lblfrase.Content = _frase;
+        }
+
+       
     }
 }
